@@ -1,11 +1,10 @@
 <script>
-    export default {
-        name:'HelloWorld'
+        export default {
+        name:'HelloVue'
     }
 </script>
-
 <template>
     <div>
-        你好 vue3
+        对对对
     </div>
 </template>

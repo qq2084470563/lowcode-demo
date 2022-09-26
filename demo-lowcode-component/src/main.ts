@@ -5,20 +5,21 @@ import './layout.scss'
 import App from './App'
 import { MyRouteType } from './myType'
 
+// 
 const components = import.meta.glob(['./components/**/*.*sx','./components/**/*.vue'])
-// ,'./components/**/*.vue'
 const componentsPromise = Object.keys(components)
 .map(x=>components[x])
 .map(f=>f()) 
 const routes:MyRouteType[]=[]
-console.log(componentsPromise);
-
 Promise.all(componentsPromise)
 .then(list=>{
     for(let module of list){
         const md:any = module
         for(let key in md){
             const Component = md[key]
+            if(key ==='default'){
+                key = Component.name
+            }
             routes.push({
                 path:'/'+key.toLocaleLowerCase(),
                 key,
