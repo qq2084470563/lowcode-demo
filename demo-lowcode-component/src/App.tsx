@@ -13,7 +13,6 @@ export default (props:{routes:MyRouteType[]})=>{
 							<li key={x.key}>
 								<RouterLink to={x.path}>{x.key}</RouterLink>
 							</li>
-
 						)
 					})}
 				</ul>
