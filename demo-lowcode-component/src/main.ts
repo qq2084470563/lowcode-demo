@@ -5,7 +5,7 @@ import './layout.scss'
 import App from './App'
 import { MyRouteType } from './myType'
 
-const components = import.meta.glob('./components/**/*.*sx')
+const components = import.meta.glob(['./components/**/*.*sx','./components/**/*.vue'])
 // ,'./components/**/*.vue'
 const componentsPromise = Object.keys(components)
 .map(x=>components[x])
